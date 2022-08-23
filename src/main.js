@@ -4,9 +4,12 @@ import { myFunction } from './lib/index.js';
 
 myFunction();*/
 
-import { handleLocation, route } from "./routers/router.js";
+import { nav } from './components/bases/nav.js';
+import { handleLocation, route } from './js/router.js';
 
 window.onpopstate = handleLocation;
 window.route = route;
+
+nav();
 
 handleLocation();
