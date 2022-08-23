@@ -1,16 +1,26 @@
 export const nav = () => {
-    const createNav = document.createElement('div')
-    createNav.classList.add('navContainer')
-    createNav.innerHTML = 
-    `<nav>
+    const createNav = document.createElement('div');
+    createNav.classList.add('navContainer');
+    createNav.appendChild(navBar);
+    const root = document.getElementById('root');
+    root.appendChild(createNav);
+    const navBar = createNav.innerHTML = `<nav class="navBar" id="navBar">
+    <div class="iconContainer" id="homeIconContainer">
+       <i id="homeIcon" class="fa fa-home" aria-hidden="true" src=""></i>
+    </div>
+    <div class="iconContainer" id="trainingsIconContainer">
+       <i id="trainingsIcon" class="fa-solid fa-person-running" src=""></i>
+    </div>
+    <div class="iconContainer" id="feedingIconContainer">
+       <i id="feedingIcon" class="fa-solid fa-bottle-water" src=""></i>
+    </div>
+    <div class="iconContainer" id="closeIconContainer">
+    <i id="closeIcon" class="fa fa-window-close" aria-hidden="true" src=""></i>
+    </div>
 
-         <ul class="nav-list">
-             <li><a href="/" onclick="route()"><i class="fa-solid fa-house"></i></a></li>
-             <li><a href="/about" onclick="route()">About</a></li>
-            <li><a href="/contact" onclick="route()">Contact</a></li>
-          </ul>
     </nav>`
 
+    return createNav();
 
 }
 
