@@ -1,0 +1,61 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0075FF;
+}
+
+.button {
+    border-radius: 5px;
+    border: none;
+    background-color: #cdcdcd;
+    margin: 2px;
+    padding: 5px;
+    color: rgb(100, 97, 100);
+    text-align: center;
+
+}
+
+#btn{
+    width: 100%;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.form{
+    width: 100%;
+    padding: 2px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #222;
+    font-size: 18px;
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    height: 12px;
+  }
+
+.card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #fff;
+    width: 300px;
+    margin: 1rem auto;
+    padding: 2px 16px;
+    border-radius: 0.5rem;
+    text-align: center;
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
