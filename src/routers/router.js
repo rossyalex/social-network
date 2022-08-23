@@ -8,7 +8,7 @@ export const route = (event) => {
 };
 
 export const handleLocation = async () => {
-    const app = document.getElementById("root");
+    const root = document.getElementById("root");
     const path = window.location.pathname;
-    app.innerHTML = routes[path] || routes[404];
+    root.innerHTML = routes[path] || routes[404];
 };
