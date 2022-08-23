@@ -10,5 +10,5 @@ export const route = (event) => {
 export const handleLocation = async () => {
     const root = document.getElementById("root");
     const path = window.location.pathname;
-    root.innerHTML = routes[path] || routes[404];
+    root.innerHTML += routes[path] || routes[404];
 };
