@@ -10,6 +10,13 @@ import { handleLocation, route } from './js/router.js';
 window.onpopstate = handleLocation;
 window.route = route;
 
-nav();
+const pathUrl = window.location.pathname;
+console.log(pathUrl);
+const urlsValid = ['/', '/training', '/feeding'];
+urlsValid.forEach((url) => {
+  if (url === pathUrl) {
+    nav();
+  }
+});
 
 handleLocation();

@@ -6,8 +6,8 @@ export const myFunction = () => {
 }; */
 
 // import { loadPartialConfigAsync } from "@babel/core";
-import { initiation } from '../../components/views/initiation.js';
-import { create } from '../../components/views/create.js';
+import { signin } from '../../components/views/signin.js';
+import { register } from '../../components/views/register.js';
 import { login } from '../../components/views/login.js';
 import { home } from '../../components/views/home.js';
 import { training } from '../../components/views/training.js';
@@ -15,12 +15,12 @@ import { feeding } from '../../components/views/feeding.js';
 import { notFound } from '../../components/views/error404.js';
 
 export const routes = {
-  '/initiation': initiation(),
-  //'/create': create(),
-  //'/login': login(),
+  '/signin': signin(),
+  '/register': register(),
+  '/login': login(),
   '/': home(),
   '/training': training(),
-  //'/feeding': feeding(),
-  //'/close': close(),
+  '/feeding': feeding(),
+  '/logout': '<h1>Cierre de sesión</h1>',
   error404: notFound(),
 };

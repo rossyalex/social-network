@@ -1,4 +1,5 @@
 import { routes } from './routes/index.js';
+import { nav } from '../components/bases/nav.js';
 
 export const route = (event) => {
   event = event || window.event;
@@ -7,7 +8,6 @@ export const route = (event) => {
   if (!href) {
     href = event.target.parentElement.href;
   }
-  console.log(href);
   window.history.pushState({}, '', href);
   handleLocation();
 };
@@ -15,7 +15,12 @@ export const route = (event) => {
 export const handleLocation = () => {
   const root = document.getElementById('root');
   const path = window.location.pathname;
-  console.log(path);
-  console.log(routes[path]);
+  renderNav(path);
   root.innerHTML = routes[path] || routes.error404;
+};
+
+const renderNav = (path) => {
+  const urlWithNav = ['/', '/training', '/feeding'];
+  const match = urlWithNav.find((url) => url === path);
+  match === undefined ? document.getElementById('nav').innerHTML = '' : nav();
 };
