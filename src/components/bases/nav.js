@@ -1,6 +1,6 @@
 export const nav = () => {
-  const navBar = document.getElementById('nav');
-  navBar.innerHTML = `<nav class="navBar" id="navBar">
+   const navBar = document.getElementById('nav');
+   navBar.innerHTML = `<nav class="navBar" id="navBar">
     <div class="iconContainer" id="homeIconContainer">
        <a href="/" onclick="route()">
         <i id="homeIcon" class="fa fa-home" aria-hidden="true"></i>

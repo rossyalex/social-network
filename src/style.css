@@ -1,5 +1,8 @@
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
+    color: #0075FF;
+    text-align: center;
+    margin-top: 30px;
 }
 
 body {
@@ -7,25 +10,108 @@ body {
     background-color: #0075FF;
 }
 
+h1 {
+    font-family: 'Inter', sans-serif;
+    color: #0075FF;
+    text-align: center;
+    font-size: 40px;
+}
+
+.gallery {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-flow: dense;
+
+}
+
+.featured {
+    grid-column: span 2;
+}
+
+.iconContainer {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 100px;
+    /*display: inline-block; 
+    width: 2em; con esto se posicionan horizontalmente
+    height: 2em;*/
+}
+
+#homeIcon {
+    margin-top: 70px;
+}
+
+#homeIcon,
+#trainingsIcon,
+#feedingIcon,
+#closeIcon {
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
 .button {
     border-radius: 5px;
     border: none;
     background-color: #cdcdcd;
     margin: 2px;
-    padding: 5px;
     color: rgb(100, 97, 100);
     text-align: center;
-
+    /*width: 100px;*/
 }
 
-#btn{
+#logoRunners {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.buttonsWrapper {
+    display: block;
+    margin: 50px;
+}
+
+#googleImg {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    left: -0.8px;
+}
+
+#appleImg {
+    width: 14px;
+    height: 14px;
+    position: relatives;
+    top: 1.2px;
+    left: -1px;
+}
+
+#linkgoogleImg {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    left: -0.8px;
+}
+
+#linkappleImg {
+    width: 14px;
+    height: 14px;
+    position: relatives;
+    top: 1.2px;
+    left: -1px;
+}
+
+#btn {
     width: 100%;
     padding: 12px;
     margin: 16px 0;
     font-size: 16px;
 }
 
-.form{
+.form {
     width: 100%;
     padding: 2px;
     border-radius: 4px;
@@ -34,28 +120,36 @@ body {
     font-size: 18px;
 }
 
-.error-message {
+.contens {
+    width: 100%;
+    height: 200px;
+    padding: 2px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #222;
+    font-size: 18px;
+}
+
+/*.error-message {
     color: red;
     font-size: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0;
     height: 12px;
-  }
+}*/
 
 .card {
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    background-color: #fff;
+    background-color: #ffffff;
     width: 300px;
     margin: 1rem auto;
     padding: 2px 16px;
     border-radius: 0.5rem;
     text-align: center;
-
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
