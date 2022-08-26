@@ -5,7 +5,7 @@ export const route = (event) => {
   event = event || window.event;
   event.preventDefault();
   let href = event.target.href;
-  if (!href) {
+  if (!href) { //No esta definido
     href = event.target.parentElement.href;
   }
   window.history.pushState({}, '', href);
@@ -13,10 +13,13 @@ export const route = (event) => {
 };
 
 export const handleLocation = () => {
-  const root = document.getElementById('root');
+  // const root = document.getElementById('root');
   const path = window.location.pathname;
   renderNav(path);
-  root.innerHTML = routes[path] || routes.error404;
+  console.log('Rutas...', path);
+  console.log('Objeto ', routes[path]);
+  const router = routes[path]; // || routes.error404;
+  console.log('Router', router);
 };
 
 const renderNav = (path) => {

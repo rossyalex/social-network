@@ -1,18 +1,23 @@
-import { collection, addDoc } from "firebase/firestore";
+// import { addDoc, collection } from 'firebase/firestore';
+import { db } from './firebaseConfig.js';
 
-function save() {
-    try {
-        const docRef = await addDoc(collection(db, "usuarios"), {
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value,
-            repeatpassword: document.getElementById("repeatpassword").value,
-        });
-            .then((docRef) => {
-                alert("Registro exitoso");
-            })
-    }   .catch ((error) => {
-        alert("Error en el registro");
-    });
-
+/**
+ *
+ * @param user Object {}
+ * @returns {Promise<string>}
+ */
+// eslint-disable-next-line consistent-return
+export async function save(user) {
+  try {
+    const docRef = await addDoc(collection(db, 'users'), user);
+    console.log('Document written with ID: ', docRef.id);
+    return docRef.id;
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
 }
 
+// save().then((data) => console.log(data))
+//   .catch((e) => {
+//     console.log(e.message);
+//   });
