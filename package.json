@@ -35,5 +35,8 @@
   "engines": {
     "node": ">=16.x"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "firebase": "^9.9.3"
+  }
 }
