@@ -21,6 +21,11 @@ export const nav = () => {
             <i id="closeIcon" class="fa fa-window-close" aria-hidden="true"></i>
         </a>
     </div>
+    <div class="iconContainer" id="closeIconContainer">
+        <a href="/register" onclick="route()">
+            <i id="closeIcon" class="fa fa-window-close" aria-hidden="true"></i>
+        </a>
+    </div>
 
     </nav>`;
 };

@@ -37,6 +37,6 @@
   },
   "type": "module",
   "dependencies": {
-    "firebase": "^9.9.3"
+    "firebase": "^9.9.1"
   }
 }

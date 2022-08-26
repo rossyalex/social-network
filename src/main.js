@@ -1,11 +1,13 @@
-/*// Este es el punto de entrada de tu aplicacion
+/* // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
 
-myFunction();*/
+myFunction(); */
 
 import { nav } from './components/bases/nav.js';
 import { handleLocation, route } from './js/router.js';
+import { save } from './firebase/firebaseConfig.js';
+import { register } from './components/views/register.js';
 
 window.onpopstate = handleLocation;
 window.route = route;
@@ -18,5 +20,7 @@ urlsValid.forEach((url) => {
     nav();
   }
 });
+
+register();
 
 handleLocation();

@@ -5,6 +5,6 @@ export const login = () => `<div class="card"><img id="logoRunners" src="../../i
             <input type="email" placeholder="Ingresa tu email">
             <label for="password">Contraseña</label>
             <input type="password" placeholder="********">
-            <button type="button" className="button">Ingresar</button>
+            <button type="button" class="button" id="login">Ingresar</button>
         </form>
         </div>`;
