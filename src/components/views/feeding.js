@@ -1,5 +1,4 @@
-export const feeding = () => {
-    return `<div class="card"> 
+export const feeding = () => `<div class="card"> 
             <h1>Alimentación</h1>
             <p>Espacio dedicado para compartirnos información relacionada a la alimentación para periodos de entrenamiento y competencias, tiendas donde se puedan conseguir alimentos deportivos</p>
             <label for="comment"></label>
@@ -8,4 +7,3 @@ export const feeding = () => {
                 <a><i class="fa-solid fa-comment"></i></a>
                 <a><i class="fa-solid fa-trash-can"></i></a>
                 </div>`;
-};
