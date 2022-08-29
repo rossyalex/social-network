@@ -1,11 +1,13 @@
 import { routes } from './routes/index.js';
 import { nav } from '../components/bases/nav.js';
+import { logic } from './logic.js';
 
 export const route = (event) => {
   event = event || window.event;
   event.preventDefault();
   let href = event.target.href;
-  if (!href) { //No esta definido
+  // Sino esta definido
+  if (!href) {
     href = event.target.parentElement.href;
   }
   window.history.pushState({}, '', href);
@@ -13,17 +15,15 @@ export const route = (event) => {
 };
 
 export const handleLocation = () => {
-  // const root = document.getElementById('root');
+  const root = document.getElementById('root');
   const path = window.location.pathname;
   renderNav(path);
-  console.log('Rutas...', path);
-  console.log('Objeto ', routes[path]);
-  const router = routes[path]; // || routes.error404;
-  console.log('Router', router);
+  root.innerHTML = routes[path] || routes.error404;
+  logic();
 };
 
 const renderNav = (path) => {
-  const urlWithNav = ['/', '/training', '/feeding'];
+  const urlWithNav = ['/', '/training', '/feeding', '/register'];
   const match = urlWithNav.find((url) => url === path);
   match === undefined ? document.getElementById('nav').innerHTML = '' : nav();
 };

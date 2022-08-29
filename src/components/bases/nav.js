@@ -1,31 +1,30 @@
 export const nav = () => {
-   const navBar = document.getElementById('nav');
-   navBar.innerHTML = `<nav class="navBar" id="navBar">
+  const navBar = document.getElementById('nav');
+  navBar.innerHTML = `<nav class="navBar" id="navBar">
     <div class="iconContainer" id="homeIconContainer">
        <a href="/" onclick="route()">
-        <i id="homeIcon" class="fa fa-home" aria-hidden="true"></i>
+        <i class="fa fa-home icon" aria-hidden="true"></i>
        </a> 
     </div>
     <div class="iconContainer" id="trainingsIconContainer">
        <a href="/training" onclick="route()">
-        <i id="trainingsIcon" class="fa-solid fa-person-running"></i>
+        <i class="fa-solid fa-person-running icon"></i>
        </a>
     </div>
     <div class="iconContainer" id="feedingIconContainer">
        <a href="/feeding" onclick="route()">
-        <i id="feedingIcon" class="fa-solid fa-apple-whole"></i>  
+        <i class="fa-solid fa-apple-whole icon"></i>  
        </a>
     </div>
     <div class="iconContainer" id="closeIconContainer">
         <a href="/logout" onclick="route()">
-            <i id="closeIcon" class="fa fa-window-close" aria-hidden="true"></i>
+            <i class="fa fa-window-close icon" aria-hidden="true"></i>
         </a>
     </div>
     <div class="iconContainer" id="closeIconContainer">
         <a href="/register" onclick="route()">
-            <i id="closeIcon" class="fa fa-window-close" aria-hidden="true"></i>
+            <i class="fa-solid fa-id-card icon" aria-hidden="true"></i>
         </a>
     </div>
-
     </nav>`;
 };

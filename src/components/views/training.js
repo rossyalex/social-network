@@ -1,5 +1,4 @@
-export const training = () => {
-  return `<div class="card"> 
+export const training = () => `<div class="card"> 
             <h1>Entrenamientos y Eventos</h1>
             <p>Espacio dedicado para compartirnos información relacionada a rutinas de entrenamiento, formar grupos de entrenamiento en conjunto y más</p>
             <label for="comment"></label>
@@ -8,4 +7,3 @@ export const training = () => {
                 <a><i class="fa-solid fa-comment"></i></a>
                 <a><i class="fa-solid fa-trash-can"></i></a>
                 </div>`;
-};
