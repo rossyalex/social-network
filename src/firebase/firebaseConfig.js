@@ -1,5 +1,5 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -30,4 +30,10 @@ export const save = async (user) => {
   }
 };
 
+<<<<<<< HEAD
 export default db;
+=======
+export {
+  app,
+};
+>>>>>>> d786607ee346815a52ef1a13623a3c7964d094c2
