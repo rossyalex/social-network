@@ -7,9 +7,10 @@ export const register = () => `<div class="card"><img id="logoRunners" src="../.
     <input  id="password"class="user" type="password">
     <label for="repeatpassword">Repetir contraseña</label>
     <input  id="repeatpassword" class="user" type="password">
+    <p id="errorInfo" class="error-message hide">Verifique sus datos y vuelva a intentar</p>
     <button type="button" id="registerUser">Registrate</button>
     <button id="linkWithGoogle" type="button" class="button"><img src="../../img/google.png" alt="Logo Google" id="linkgoogleImg"/>Vincular Cuenta con Google</button>
-    <button id="outGoogle" type="button">Logout</button> 
+    <!-- <button id="outGoogle" type="button">Logout</button> -->
     </form>
     </div>`;
 

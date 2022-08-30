@@ -19,7 +19,7 @@ export const accessGoogle = () => {
       // The signed-in user info.
       const user = result.user;
       console.log(user);
-      // window.location.href = '/';
+      window.location.href = '/';
     })
     .catch((error) => {
       console.log(error);
