@@ -26,8 +26,6 @@
 
 }
 
-
-
 html {
     font-family: 'Inter', sans-serif;
     color: #0075FF;
@@ -172,14 +170,18 @@ h1 {
     font-size: 18px;
 }
 
-/*.error-message {
+.hide {
+    display: none;
+}
+
+.error-message {
     color: red;
     font-size: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0;
     height: 12px;
-}*/
+}
 
 .card {
     transition: all 0.3s ease;
@@ -198,5 +200,13 @@ h1 {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.runnergirl{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 2px;
+    left: -0.8px;
+    color: #ffffff;
+}
 
 

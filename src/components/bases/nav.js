@@ -1,11 +1,6 @@
 export const nav = () => {
   const navBar = document.getElementById('nav');
   navBar.innerHTML = `<nav class="navBar" id="navBar">
-     <div class="iconContainer" id="closeIconContainer">
-        <a href="/register" onclick="route()">
-         <i class="fa-solid fa-id-card icon" aria-hidden="true"></i>
-        </a>
-    </div>
     <div class="iconContainer" id="homeIconContainer">
        <a href="/" onclick="route()">
         <i class="fa fa-home icon" aria-hidden="true"></i>
@@ -22,10 +17,13 @@ export const nav = () => {
        </a>
     </div>
     <div class="iconContainer" id="closeIconContainer">
-        <a href="/logout" onclick="route()">
+        <button id="outGoogle" type="button">
             <i class="fa fa-window-close icon" aria-hidden="true"></i>
-        </a>
+        </button>
     </div>
 
     </nav>`;
 };
+
+
+

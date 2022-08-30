@@ -3,5 +3,6 @@ export const signin = () => `<div class="card"> <img id="logoRunners" src="../..
         <div class="buttonsWrapper">
         <button id="initiation" type="button" class="button">Iniciar Sesión</button>
         <button id="create" type="button" class="button">Crear Cuenta</button>
-        <button id="google" type="button" class="button"><img src="../../img/google.png" alt="Logo Google" id="googleImg"> Acceder con Google</button>
     </div>`;
+
+
