@@ -29,11 +29,7 @@ export const save = async (user) => {
     return e;
   }
 };
-
-<<<<<<< HEAD
-export default db;
-=======
 export {
   app,
 };
->>>>>>> d786607ee346815a52ef1a13623a3c7964d094c2
+
