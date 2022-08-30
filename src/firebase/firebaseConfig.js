@@ -1,5 +1,5 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -28,4 +28,8 @@ export const save = async (user) => {
     console.error('Error adding document: ', e);
     return e;
   }
+};
+
+export {
+  app,
 };
