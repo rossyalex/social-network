@@ -4,7 +4,7 @@ export const home = () => `<img class="runnergirl" src="../../img/girlrun.png" a
                 <p>Acá podrás revisar y compartir todo la información actualizada de nuestra pasión, 
                 además de acompañarnos en los entrenamientos.</p>
                 <label for="comment"></label>
-                <input class="contens" type="text">
+                <input class="contents" type="text">
                 <a><i class="fa-solid fa-hand-holding-heart"></i></a>
                 <a><i class="fa-solid fa-comment"></i></a>
                 <a><i class="fa-solid fa-trash-can"></i></a>

@@ -1,3 +1,33 @@
+/*Vista tablet*/
+@media only screen and (min-width: 600px) {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11,
+    .col-12 {
+      width: 96%;
+    }
+
+}
+/*Vista escritorio*/
+@media only screen and (min-width: 992px) {
+
+    /* .navBar {
+        display: flex;
+        flex-flow: row wrap;
+    } */
+
+}
+
+
+
 html {
     font-family: 'Inter', sans-serif;
     color: #0075FF;
@@ -30,13 +60,20 @@ h1 {
     grid-column: span 2;
 }
 
+/*.navBar {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+    margin-left: 330px; comentada 
+}*/
+
 .iconContainer {
     text-align: left;
     margin-top: 20px;
     margin-left: 100px;
-    /*display: inline-block;
-    width: 2em; con esto se posicionan horizontalmente
+    /*width: 2em; con esto se posicionan horizontalmente
     height: 2em;*/
+  
 }
 
 #homeIcon {
@@ -125,7 +162,7 @@ h1 {
     font-size: 18px;
 }
 
-.contens {
+.contents {
     width: 100%;
     height: 200px;
     padding: 2px;
@@ -153,8 +190,13 @@ h1 {
     padding: 2px 16px;
     border-radius: 0.5rem;
     text-align: center;
+    margin:auto;
+    margin-top: 20%;
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
+
+
