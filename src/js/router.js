@@ -23,7 +23,7 @@ export const handleLocation = () => {
 };
 
 const renderNav = (path) => {
-  const urlWithNav = ['/', '/training', '/feeding', '/register'];
+  const urlWithNav = ['/', '/training', '/feeding'];
   const match = urlWithNav.find((url) => url === path);
   match === undefined ? document.getElementById('nav').innerHTML = '' : nav();
 };
