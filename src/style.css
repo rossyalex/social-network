@@ -93,9 +93,10 @@ h1 {
 
 .button {
     border-radius: 5px;
-    border: none;
+    border: 1px solid #999999;
     background-color: #cdcdcd;
     margin: 2px;
+    padding: 5px;
     color: rgb(100, 97, 100);
     text-align: center;
     /*width: 100px;*/
@@ -120,13 +121,6 @@ h1 {
     left: -0.8px;
 }
 
-#appleImg {
-    width: 14px;
-    height: 14px;
-    position: relatives;
-    top: 1.2px;
-    left: -1px;
-}
 
 #linkgoogleImg {
     width: 15px;
@@ -136,13 +130,6 @@ h1 {
     left: -0.8px;
 }
 
-#linkappleImg {
-    width: 14px;
-    height: 14px;
-    position: relatives;
-    top: 1.2px;
-    left: -1px;
-}
 
 #btn {
     width: 100%;

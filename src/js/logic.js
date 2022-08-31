@@ -55,12 +55,14 @@ function registerFirestore() {
     password,
     repeatPassword,
   };
+  
   //vista login
   // if (user.emailLogIn === '') {
   //   errorLogin.classList.add('hide');
   //   errorLogin.classList.remove('hide');
   //   window.location.href = '/login';
   // } else {
+  //   
   //   window.location.href = '/';
   // };
   

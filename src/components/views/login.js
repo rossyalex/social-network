@@ -7,5 +7,6 @@ export const login = () => `<div class="card"><img id="logoRunners" src="../../i
             <input id="passwordLogIn" type="password" placeholder="********">
             <p id="errorLogin" class="error-message hide">Verifique sus datos y vuelva a intentar</p>
             <button type="button" class="button" id="login">Ingresar</button>
+            <button id="linkWithGoogle" type="button" class="button"><img src="../../img/google.png" alt="Logo Google" id="linkgoogleImg"/>Vincular Cuenta con Google</button>
         </form>
         </div>`;
