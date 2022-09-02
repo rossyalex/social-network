@@ -1,29 +1,17 @@
-/*Vista tablet*/
-@media only screen and (min-width: 600px) {
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12 {
-      width: 96%;
-    }
-
+.container {
+    width: auto;
+    margin: 0;
 }
-/*Vista escritorio*/
-@media only screen and (min-width: 992px) {
 
-    /* .navBar {
-        display: flex;
-        flex-flow: row wrap;
-    } */
+.row {
+    position: relative;
+    width: 100%;
+}
 
+.row [class^="col"] {
+    float: left;
+    margin: 0.5rem 2%;
+    min-height: 0.125rem;
 }
 
 html {
@@ -45,33 +33,19 @@ h1 {
     font-size: 40px;
 }
 
-.gallery {
-    display: grid;
-    gap: 1rem;
-    grid-auto-rows: 22rem;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-auto-flow: dense;
 
-}
-
-.featured {
-    grid-column: span 2;
-}
-
-/*.navBar {
+.navBar {
     display: flex;
-    justify-content: flex-start;
-    margin: auto;
-    margin-left: 330px; comentada 
-}*/
+    margin-left: -5vw;
+}
 
 .iconContainer {
     text-align: left;
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 50px;
     /*width: 2em; con esto se posicionan horizontalmente
     height: 2em;*/
-  
+
 }
 
 #homeIcon {
@@ -180,7 +154,8 @@ h1 {
     border-radius: 0.5rem;
     text-align: center;
     margin:auto;
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-left: 6vw; 
 }
 
 .card:hover {
@@ -196,4 +171,170 @@ h1 {
     color: #ffffff;
 }
 
+.girlwhiterun {
+    width: 100%;
+    margin-top: 30vw;
+}
 
+/*Vista tablet*/
+@media only screen and (min-width: 640px) {
+    .col-1 {
+        width: 4.33%;
+    }
+    .col-2 {
+        width: 12.66%;
+    }
+
+    .col-3 {
+        width: 21%;
+    }
+
+    .col-4 {
+        width: 29.33%;
+    }
+
+    .col-5 {
+        width: 37.66%;
+    }
+
+    .col-6 {
+        width: 46%;
+    }
+
+    .col-7 {
+        width: 54.33%;
+    }
+
+    .col-8 {
+        width: 62.66%;
+    }
+
+    .col-9 {
+        width: 71%;
+    }
+
+    .col-10 {
+        width: 79.33%;
+    }
+
+    .col-11 {
+        width: 87.66%;
+    }
+
+    .col-12 {
+        width: 96%;
+    }
+    .navBar {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin: auto;
+        margin-left: 14vw;
+        margin-top: 10vw;
+    }
+
+    .iconContainer {
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 50px;
+        /*width: 2em; con esto se posicionan horizontalmente
+        height: 2em;*/
+    }
+
+    .card {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+        background-color: #ffffff;
+        width: 300px;
+        margin: 1rem auto;
+        padding: 2px 16px;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin:auto;
+        margin-top: 10%;
+        margin-left: 1vw; 
+    }
+
+    .girlwhiterun {
+        width: 70%;
+        margin-top: 55vw;
+        }
+}
+
+/*Vista escritorio*/
+@media only screen and (min-width: 1280px) {
+
+    .col-1 {
+        width: 4.33%;
+    }
+    .col-2 {
+        width: 12.66%;
+    }
+
+    .col-3 {
+        width: 21%;
+    }
+
+    .col-4 {
+        width: 29.33%;
+    }
+
+    .col-5 {
+        width: 37.66%;
+    }
+
+    .col-6 {
+        width: 46%;
+    }
+
+    .col-7 {
+        width: 54.33%;
+    }
+
+    .col-8 {
+        width: 62.66%;
+    }
+
+    .col-9 {
+        width: 71%;
+    }
+
+    .col-10 {
+        width: 79.33%;
+    }
+
+    .col-11 {
+        width: 87.66%;
+    }
+
+    .col-12 {
+        width: 96%;
+    }
+
+    footer {
+        /*background-repeat: repeat;*/
+        margin-top: 7vw;
+        height: 70px;
+        
+    }
+
+    .navBar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iconContainer {
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 50px;
+        /*width: 2em; con esto se posicionan horizontalmente
+        height: 2em;*/
+
+    }
+
+    .girlwhiterun {
+        width: 40%;
+        margin-top: 0vw;
+    }
+}
+    
