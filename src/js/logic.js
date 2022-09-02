@@ -1,9 +1,16 @@
 import { save } from '../firebase/firebaseConfig.js';
 import { accessGoogle, outGoogle } from '../firebase/auth.js';
 
-function singInPath() {window.location.href = '/login'}; 
+function singInPath() {window.location.href = '/login'};
 function registerPath() {window.location.href = '/register'};
 function logInPath() {window.location.href = '/'};
+
+function toggle(e) {
+  const inputPassword = document.getElementById('passwordLogIn');
+  const type = inputPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+  inputPassword.setAttribute('type', type);
+  this.classList.toggle('fa-eye-slash');
+}
 
 export const logic = () => {
   const buttonRegisterUser = document.getElementById('registerUser');
@@ -37,12 +44,12 @@ export const logic = () => {
 
   if (buttonLogIn) {
     buttonLogIn.addEventListener('click', logInPath);
+    const togglePassword = document.getElementById('togglePassword');
+    togglePassword.addEventListener('click', toggle);
   }
 
   return myLogicApp;
 };
-
-
 
 function registerFirestore() {
   let saveUser = '';
@@ -55,17 +62,17 @@ function registerFirestore() {
     password,
     repeatPassword,
   };
-  
+
   //vista login
   // if (user.emailLogIn === '') {
   //   errorLogin.classList.add('hide');
   //   errorLogin.classList.remove('hide');
   //   window.location.href = '/login';
   // } else {
-  //   
+  //
   //   window.location.href = '/';
   // };
-  
+
   // if ( user.passwordLogIn === '') {
   //   errorLogin.classList.add('hide');
   //   errorLogin.classList.remove('hide');
@@ -86,13 +93,13 @@ function registerFirestore() {
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
   } else  {saveUser}
-  
+
   if (user.repeatPassword === '') {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
   } else  {saveUser};
-  
+
   save(user).then((data) => {
     saveUser = data;
     document.getElementById('email').value = '';
@@ -100,7 +107,7 @@ function registerFirestore() {
     document.getElementById('repeatpassword').value = '';
     alert(`Te has registrado exitosamente ${data}`);
     window.location.href = '/';
-    
+
   }).catch((e) => {
     console.error(e);
     alert('Vuelve a intentarlo');
