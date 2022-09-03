@@ -1,5 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+import { get } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js';
+import { getFirestore, addDoc, doc, collection, getDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -29,7 +30,31 @@ export const save = async (user) => {
     return e;
   }
 };
+
+export const getUser = async (email) => {
+  console.log(email);
+  const userRef = collection(db, 'users');
+  const q = query(userRef, where("email", "==", email));
+  const executeQuery = await getDocs(q);
+  return executeQuery;
+//   const usersRef = firebase
+//   .firestore()
+//   .collection("users");
+
+// usersRef
+//   .get()
+//   .then((results) => {
+//     const data = results.docs.map((doc) => ({
+//       id: doc.id,
+//       ...doc.data(),
+//     }));
+//     console.log("Toda la data de users ", data); 
+//     // [ { id: 'glMeZvPpTN1Ah31sKcnj', titulo: 'El gran Gatsby' } ]
+//   });
+  
+}
+
 export {
-  app,
+  app
 };
 

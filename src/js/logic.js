@@ -1,9 +1,61 @@
-import { save } from '../firebase/firebaseConfig.js';
+import { save, getUser } from '../firebase/firebaseConfig.js';
 import { accessGoogle, outGoogle } from '../firebase/auth.js';
 
 function singInPath() {window.location.href = '/login'};
 function registerPath() {window.location.href = '/register'};
-function logInPath() {window.location.href = '/'};
+async function logInPath() {
+  const emailInput = document.getElementById('emailLogIn');
+  const passInput = document.getElementById('passwordLogIn');
+  const email = emailInput.value;
+  const pass = passInput.value;
+
+  if(email == '') {
+    // Ingresa tu correo error
+    console.log('Ingresa correo');
+    return;
+  }
+  if (pass == '') {
+    // Ingresa tu contraseña
+    console.log('Ingresa contraseña');
+    return;
+  }
+
+  const response = await getUser(email);
+
+  let user = null;
+
+  response.forEach((doc) => {
+    user = doc.data();
+  })
+  console.log('Usuario', user);
+
+  if (user) {
+    const { email } = user;
+    console.log('Existe el usuario', email);
+    window.location.href = '/'
+  } else {
+    // Mostrar error de que no existe el usuario
+    console.log('El usuario no existe en la BD');
+  }
+
+  //console.log('Desde logic', query);
+
+  // Valido inputs diferentes a vacío
+
+  // const userFb = getUser -> {email: '...', password: '...'}
+
+  // userFb.password === passwordInput
+
+  // Valido de que exista en mi base de datos Firestore
+
+  // Contraseña buena pero correo incorrecto
+
+  // Si existe pero la contraseña no es igual darle error "Contraseña invalida"
+
+  // window.location.href = '/'
+
+  // IF todo esta bien then -> window.location.href = '/'
+};
 
 function toggle(e) {
   const inputPassword = document.getElementById('passwordLogIn');
