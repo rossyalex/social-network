@@ -1,7 +1,9 @@
 export const register = () => `<div class="card"><img id="logoRunners" src="../../img/logo1.png" alt="Logo applicación">
     <h1>Crear Usuario</h1>
     <form class="buttonsWrapper" action="" method="post">
-         <label for="email">Correo electrónico</label>
+          <label for="name">Nombre</label>
+          <input  id="name" class="user" type="text" placeholder="Ingresa tu Nombre">
+          <label for="email">Correo electrónico</label>
           <input  id="email"class="user" type="text" placeholder="Ingresa tu email">
           <label for="password">Contraseña</label>
           <input  id="password"class="user" type="password" placeholder="********">

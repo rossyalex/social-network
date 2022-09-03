@@ -7,6 +7,7 @@ export const login = () => `<div class="card"><img id="logoRunners" src="../../i
             <input id="passwordLogIn" type="password" placeholder="********">
             <i class="far fa-eye" id="togglePassword"></i>
             <p id="errorLogin" class="error-message hide">Verifique sus datos y vuelva a intentar</p>
+            <p id="createAccount" class="error-message hide">Por favor crearse una cuenta</p>
             <div class="container-buttons">
                  <button type="button" class="button" id="login"><span>Ingresar</span></button>
             </div>

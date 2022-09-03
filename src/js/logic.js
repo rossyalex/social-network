@@ -9,17 +9,23 @@ async function logInPath() {
   const email = emailInput.value;
   const pass = passInput.value;
 
+  // Valido inputs diferentes a vacío 
   if(email == '') {
     // Ingresa tu correo error
-    console.log('Ingresa correo');
+    errorLogin.classList.add('hide');
+    errorLogin.classList.remove('hide');
+    //console.log('Ingresa correo');
     return;
   }
   if (pass == '') {
     // Ingresa tu contraseña
-    console.log('Ingresa contraseña');
+    errorLogin.classList.add('hide');
+    errorLogin.classList.remove('hide');
+    //console.log('Ingresa contraseña');
     return;
   }
 
+  // Esta parte obtiene al usuario desde Firestore 
   const response = await getUser(email);
 
   let user = null;
@@ -27,34 +33,24 @@ async function logInPath() {
   response.forEach((doc) => {
     user = doc.data();
   })
-  console.log('Usuario', user);
-
+  
+  // Validamos si existe el usuario
   if (user) {
-    const { email } = user;
-    console.log('Existe el usuario', email);
-    window.location.href = '/'
+    const { password, name } = user; // Esto viene de Firestore
+    if (password != pass) {
+      console.log('Contraseña erronea');
+      return;
+    }
+    // Guardo el nombre
+    localStorage.setItem('name', name);
+
+    // If localStorage.getItem('name') != null 
+    window.location.href = '/';
   } else {
     // Mostrar error de que no existe el usuario
-    console.log('El usuario no existe en la BD');
+    createAccount.classList.add('hide');
+    createAccount.classList.remove('hide');
   }
-
-  //console.log('Desde logic', query);
-
-  // Valido inputs diferentes a vacío
-
-  // const userFb = getUser -> {email: '...', password: '...'}
-
-  // userFb.password === passwordInput
-
-  // Valido de que exista en mi base de datos Firestore
-
-  // Contraseña buena pero correo incorrecto
-
-  // Si existe pero la contraseña no es igual darle error "Contraseña invalida"
-
-  // window.location.href = '/'
-
-  // IF todo esta bien then -> window.location.href = '/'
 };
 
 function toggle(e) {
@@ -71,7 +67,7 @@ export const logic = () => {
   const signInView = document.getElementById('initiation');
   const registerView = document.getElementById('create');
   const buttonLogIn = document.getElementById('login');
-  console.log(buttonOutGoogle);
+  //console.log(buttonOutGoogle);
   const myLogicApp = 'Ok';
   // Si existe un botón en el renderizado entonces agrega evento
   if (buttonRegisterUser) {
@@ -105,35 +101,25 @@ export const logic = () => {
 
 function registerFirestore() {
   let saveUser = '';
+  let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
   let repeatPassword = document.getElementById('repeatpassword').value;
 
   const user = {
+    name,
     email,
     password,
     repeatPassword,
   };
 
-  //vista login
-  // if (user.emailLogIn === '') {
-  //   errorLogin.classList.add('hide');
-  //   errorLogin.classList.remove('hide');
-  //   window.location.href = '/login';
-  // } else {
-  //
-  //   window.location.href = '/';
-  // };
-
-  // if ( user.passwordLogIn === '') {
-  //   errorLogin.classList.add('hide');
-  //   errorLogin.classList.remove('hide');
-  //   window.location.href = '/login';
-  // } else {
-  //   window.location.href = '/';
-  // };
-
   // Mensaje de error registro
+  if (user.name === '') {
+    errorInfo.classList.add('hide');
+    errorInfo.classList.remove('hide');
+    window.location.href = '/register';
+  } else  {saveUser};
+  
   if (user.email === '') {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
@@ -152,8 +138,10 @@ function registerFirestore() {
     window.location.href = '/register';
   } else  {saveUser};
 
+  // Guardar la data
   save(user).then((data) => {
     saveUser = data;
+    document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('password').value = '';
     document.getElementById('repeatpassword').value = '';
