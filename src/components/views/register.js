@@ -14,6 +14,7 @@ export const register = () => `<div class="card"><img id="logoRunners" src="../.
           <input  id="repeatpassword" class="user" type="password" placeholder="********">
           <i class="far fa-eye" id="togglePassword"></i>
           <p id="errorInfo" class="error-message hide">Verifique sus datos y vuelva a intentar</p>
+          <p id="errorUserCreated" class="error-message hide">Usuario ya registrado</p>
         <div class="container-buttons">
          <button type="button" class="button" id="registerUser"><span>Registrate</span></button>
         </div>
