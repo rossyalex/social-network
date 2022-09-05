@@ -3,6 +3,7 @@ import { nav } from '../components/bases/nav.js';
 import { logic } from './logic.js';
 
 export const route = (event) => {
+  // eslint-disable-next-line no-param-reassign
   event = event || window.event;
   event.preventDefault();
   let href = event.target.href;
@@ -25,5 +26,6 @@ export const handleLocation = () => {
 const renderNav = (path) => {
   const urlWithNav = ['/', '/training', '/feeding'];
   const match = urlWithNav.find((url) => url === path);
+  // eslint-disable-next-line no-unused-expressions
   match === undefined ? document.getElementById('nav').innerHTML = '' : nav();
 };

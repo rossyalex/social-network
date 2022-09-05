@@ -1,3 +1,5 @@
+/* eslint-disable eol-last */
+
 export const login = () => `<div class="card"><img id="logoRunners" src="../../img/logo1.png" alt="Logo applicación">
         <h1>Inicio de sesión</h1>
         <form class="buttonsWrapper" action="" method="post">

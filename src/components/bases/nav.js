@@ -21,9 +21,5 @@ export const nav = () => {
             <i class="fa fa-window-close icon" aria-hidden="true"></i>
         </button>
     </div>
-
     </nav>`;
 };
-
-
-

@@ -1,3 +1,5 @@
+/* eslint-disable eol-last */
+
 export const register = () => `<div class="card"><img id="logoRunners" src="../../img/logo1.png" alt="Logo applicación">
     <h1>Crear Usuario</h1>
     <form class="buttonsWrapper" action="" method="post">
@@ -19,4 +21,3 @@ export const register = () => `<div class="card"><img id="logoRunners" src="../.
     <!-- <button id="outGoogle" type="button">Logout</button> -->
     </form>
     </div>`;
-

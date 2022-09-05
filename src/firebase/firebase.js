@@ -1,4 +1,6 @@
-// import { addDoc, collection } from 'firebase/firestore';
+// eslint-disable-next-line import/no-unresolved
+import { addDoc, collection } from 'firebase/firestore';
+// eslint-disable-next-line import/named
 import { db } from './firebaseConfig.js';
 
 /**
@@ -10,10 +12,10 @@ import { db } from './firebaseConfig.js';
 export async function save(user) {
   try {
     const docRef = await addDoc(collection(db, 'users'), user);
-    console.log('Document written with ID: ', docRef.id);
+    // console.log('Document written with ID: ', docRef.id);
     return docRef.id;
   } catch (e) {
-    console.error('Error adding document: ', e);
+    // console.error('Error adding document: ', e);
   }
 }
 

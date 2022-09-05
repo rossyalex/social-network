@@ -1,6 +1,6 @@
 import {
   getAuth, signInWithPopup, GoogleAuthProvider, signOut,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+} from './firebaseImports.js';
 // eslint-disable-next-line import/named
 import { app } from './firebaseConfig.js';
 
@@ -40,8 +40,8 @@ export const outGoogle = async () => {
   const auth = getAuth(app);
   try {
     await signOut(auth);
-    console.log('Te has deslogueado exitosamente');
+    // console.log('Te has deslogueado exitosamente');
   } catch (e) {
-    console.error(e);
+    // console.error(e);
   }
 };
