@@ -1,3 +1,5 @@
+/* eslint-disable eol-last */
+
 export const feeding = () => `<div class="card"> 
             <h1>Alimentación</h1>
             <p>Espacio dedicado para compartirnos información relacionada a la alimentación para periodos de entrenamiento y competencias, tiendas donde se puedan conseguir alimentos deportivos</p>

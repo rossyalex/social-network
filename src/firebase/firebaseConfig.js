@@ -1,6 +1,10 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-//import { get } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js';
-import { getFirestore, addDoc, doc, collection, getDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+import {
+  initializeApp,
+
+  getFirestore, addDoc, collection, getDocs, query, where,
+} from './firebaseImports.js';
+
+// eslint-disable-next-line import/named
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -21,24 +25,18 @@ const db = getFirestore(app);
 
 export const save = async (user) => {
   try {
-    console.log(user);
     const docRef = await addDoc(collection(db, 'users'), user);
-    console.log('Document written with ID: ', docRef.id);
     return docRef.id;
   } catch (e) {
-    console.error('Error adding document: ', e);
     return e;
   }
 };
 
 export const getUser = async (email) => {
   const userRef = collection(db, 'users');
-  const qEmail = query(userRef, where("email", "==", email));
-  return await getDocs( qEmail );
-}
-
-export {
-  app
+  const qEmail = query(userRef, where('email', '==', email));
+  return getDocs(qEmail);
 };
-
-
+export {
+  app,
+};

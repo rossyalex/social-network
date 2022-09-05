@@ -1,3 +1,5 @@
+/* eslint-disable eol-last */
+
 export const training = () => `<div class="card"> 
             <h1>Entrenamientos y Eventos</h1>
             <p>Espacio dedicado para compartirnos información relacionada a rutinas de entrenamiento, formar grupos de entrenamiento en conjunto y más</p>
