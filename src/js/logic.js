@@ -15,19 +15,17 @@ async function logInPath() {
   const email = emailInput.value;
   const pass = passInput.value;
 
-  // Valido inputs diferentes a vacío
+  // Valido inputs diferentes o vacío
   if (email === '') {
     // Ingresa tu correo error
     errorLogin.classList.add('hide');
     errorLogin.classList.remove('hide');
-    // console.log('Ingresa correo');
     return;
   }
   if (pass === '') {
     // Ingresa tu contraseña
     errorLogin.classList.add('hide');
     errorLogin.classList.remove('hide');
-    // console.log('Ingresa contraseña');
     return;
   }
 
@@ -44,7 +42,8 @@ async function logInPath() {
   if (user) {
     const { password, name } = user; // Esto viene de Firestore
     if (password !== pass) {
-    //  console.log('Contraseña erronea');
+      errorLogin.classList.add('hide');
+      errorLogin.classList.remove('hide');
       return;
     }
     // Guardo el nombre
@@ -73,13 +72,28 @@ function toggle() {
   this.classList.toggle('fa-eye-slash');
 }
 
-function registerFirestore() {
-  let saveUser = '';
+async function registerFirestore() {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const repeatPassword = document.getElementById('repeatpassword').value;
   const errorInfo = document.getElementById('errorInfo');
+
+  const response = await getUser(email);
+
+  let userResponse = null;
+
+  response.forEach((doc) => {
+    userResponse = doc.data();
+  });
+
+  // Mensaje de error usuario ya creado
+  if (userResponse) {
+    const errorUserCreated = document.getElementById('errorUserCreated');
+    errorUserCreated.classList.add('hide');
+    errorUserCreated.classList.remove('hide');
+    return;
+  }
 
   const user = {
     name,
@@ -93,29 +107,28 @@ function registerFirestore() {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
-  } else { return saveUser; }
+  }
 
   if (user.email === '') {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
-  } else { return saveUser; }
+  }
 
   if (user.password === '') {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
-  } else { return saveUser; }
+  }
 
   if (user.repeatPassword === '') {
     errorInfo.classList.add('hide');
     errorInfo.classList.remove('hide');
     window.location.href = '/register';
-  } else { return saveUser; }
+  }
 
   // Guardar la data
   save(user).then((data) => {
-    saveUser = data;
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('password').value = '';
@@ -126,8 +139,6 @@ function registerFirestore() {
     console.error(e);
     alert('Vuelve a intentarlo');
   });
-
-  return saveUser;
 }
 
 function signInFunctionGoogle() {
