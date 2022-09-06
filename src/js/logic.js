@@ -7,6 +7,7 @@ import {
 
 function singInPath() { window.location.href = '/login'; }
 function registerPath() { window.location.href = '/register'; }
+
 async function logInPath() {
   const emailInput = document.getElementById('emailLogIn');
   const passInput = document.getElementById('passwordLogIn');
@@ -59,24 +60,39 @@ async function logInPath() {
   }
 }
 
-/* input.addEventListener('click', function () {
-  toggle('passwordLogIn');
-  toggle('password');
-  toggle('repeatpassword');
-}) */
-
-function toggle() {
-  const inputPassword = document.getElementById('passwordLogIn');
+/**
+ * Función para cambiar el ojo y ocultar/mostrar password
+ * @param e
+ * @param inputId
+ */
+export function toggle(e, inputId) {
+  const inputPassword = document.getElementById(inputId);
   const type = inputPassword.getAttribute('type') === 'password' ? 'text' : 'password';
   inputPassword.setAttribute('type', type);
-  this.classList.toggle('fa-eye-slash');
+  e.target.classList.toggle('fa-eye-slash');
+}
+
+/**
+ * Función para mostrar/ocultar password
+ */
+function toggleEyeRegister() {
+  const eyes = document.querySelectorAll('.passwordEye');
+  const passInputs = ['password', 'repeatPassword'];
+  eyes.forEach((item, i) => {
+    item.addEventListener('click', (e) => {
+      const idInput = passInputs[i];
+      toggle(e, idInput);
+      // Primera iteración toggle(e, 'password');
+      // Segunda iteracion toggle(e, repeatPassword);
+    });
+  });
 }
 
 async function registerFirestore() {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  const repeatPassword = document.getElementById('repeatpassword').value;
+  const repeatPassword = document.getElementById('repeatPassword').value;
   const errorInfo = document.getElementById('errorInfo');
 
   const response = await getUser(email);
@@ -132,12 +148,15 @@ async function registerFirestore() {
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('password').value = '';
-    document.getElementById('repeatpassword').value = '';
-    alert(`Te has registrado exitosamente ${data}`);
+    document.getElementById('repeatPassword').value = '';
+    console.log(data);
+    // TODO Informar registro exitoso
+    // alert(`Te has registrado exitosamente ${data}`);
     window.location.href = '/';
   }).catch((e) => {
     console.error(e);
-    alert('Vuelve a intentarlo');
+    // TODO Informar error de volver a intentarlo
+    // alert('Vuelve a intentarlo');
   });
 }
 
@@ -156,6 +175,7 @@ export const logic = () => {
   const myLogicApp = 'Ok';
   // Si existe un botón en el renderizado entonces agrega evento
   if (buttonRegisterUser) {
+    toggleEyeRegister();
     buttonRegisterUser.addEventListener('click', registerFirestore);
   }
 
@@ -178,7 +198,9 @@ export const logic = () => {
   if (buttonLogIn) {
     buttonLogIn.addEventListener('click', logInPath);
     const togglePassword = document.getElementById('togglePassword');
-    togglePassword.addEventListener('click', toggle);
+    togglePassword.addEventListener('click', (e) => {
+      toggle(e, 'passwordLogIn');
+    });
   }
 
   return myLogicApp;

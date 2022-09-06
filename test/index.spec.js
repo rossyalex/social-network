@@ -1,8 +1,7 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/js/routes/index.js';
+import { logic } from '../src/js/logic.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+describe('Logic', () => {
+  it('Debe ser una función', () => {
+    expect(typeof logic).toBe('function');
   });
 });
