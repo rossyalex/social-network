@@ -5,3 +5,4 @@ describe('Logic', () => {
     expect(typeof logic).toBe('function');
   });
 });
+
