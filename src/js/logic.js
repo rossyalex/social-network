@@ -33,13 +33,12 @@ export function toggle(e, inputId) {
  */
 function toggleEyeRegister() {
   const eyes = document.querySelectorAll('.passwordEye');
-  const passInputs = ['password', 'repeatPassword'];
+  const passInputs = ['password'];
   eyes.forEach((item, i) => {
     item.addEventListener('click', (e) => {
       const idInput = passInputs[i];
       toggle(e, idInput);
       // Primera iteración toggle(e, 'password');
-      // Segunda iteracion toggle(e, repeatPassword);
     });
   });
 }
@@ -65,7 +64,13 @@ export const logic = () => {
     buttonRegisterUser.addEventListener('click', async () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
-      await register(email, pass);
+      const response = await register(email, pass);
+      if (response) {
+        const { user: { accessToken, email } } = response;
+        localStorage.setItem('token', accessToken);
+        localStorage.setItem('email', email);
+        window.location.href = '/';
+      }
     });
   }
 

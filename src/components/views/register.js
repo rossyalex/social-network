@@ -8,9 +8,6 @@ export const register = () => `<div class="card"><img id="logoRunners" src="../.
           <label for="password">Contraseña</label>
           <input id="password" class="user" type="password" placeholder="********">
           <i class="far fa-eye passwordEye"></i><br>
-          <label id="textRepeatPassword" for="repeatpassword">Repetir contraseña</label>
-          <input id="repeatPassword" class="user" type="password" placeholder="********">
-          <i class="far fa-eye passwordEye"></i>
           <p id="errorInfo" class="error-message hide">Verifique sus datos y vuelva a intentar</p>
           <p id="errorUserCreated" class="error-message hide">Usuario ya registrado</p>
           <p id="errorUserPass" class="error-message hide">Contraseña debe tener mínimo 6 caracteres</p>
