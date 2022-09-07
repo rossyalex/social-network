@@ -17,9 +17,9 @@ export const nav = () => {
        </a>
     </div>
     <div class="iconContainer" id="closeIconContainer">
-        <button id="outGoogle" type="button">
+        <a href="#" id="outGoogle">
             <i class="fa fa-window-close icon" aria-hidden="true"></i>
-        </button>
+        </a>
     </div>
     </nav>`;
 };

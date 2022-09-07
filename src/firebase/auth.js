@@ -1,8 +1,6 @@
 import {
-  getAuth, signInWithPopup, GoogleAuthProvider, signOut,
+  getAuth, signInWithPopup, GoogleAuthProvider, signOut, app,
 } from './firebaseImports.js';
-// eslint-disable-next-line import/named
-import { app } from './firebaseConfig.js';
 
 const provider = new GoogleAuthProvider();
 
@@ -27,11 +25,13 @@ export const accessGoogle = () => {
 };
 
 // Cerrar sesión
-export const outGoogle = async () => {
+export const logout = async () => {
   const auth = getAuth(app);
   try {
     await signOut(auth);
-    // console.log('Te has deslogueado exitosamente');
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+    window.location.href = '/login';
   } catch (e) {
     // console.error(e);
   }

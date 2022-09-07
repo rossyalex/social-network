@@ -1,25 +1,71 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable eol-last */
+// eslint-disable-next-line import/no-unresolved
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import {
-  getAuth, signInWithPopup, GoogleAuthProvider, signOut,
+  GoogleAuthProvider,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged,
+  signInWithPopup,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
-
 import {
-  initializeApp,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+  getFirestore,
+  collection,
+  addDoc,
+  Timestamp,
+  arrayRemove,
+  arrayUnion,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+  updateDoc,
+  where,
 
-import {
-  getFirestore, addDoc, collection, getDocs, query, where,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 
-export {
-  getAuth, signInWithPopup, GoogleAuthProvider, signOut,
-};
+import config from './config.js';
+
+const app = initializeApp(config);
+const provider = new GoogleAuthProvider(app);
+// Inicializa DB de Firestore
+const db = getFirestore(app);
+// Inicializa la autenticación de usuarios
+const auth = getAuth(app);
 
 export {
-  initializeApp,
-};
+  app,
+  auth,
+  provider,
+  db,
+  GoogleAuthProvider,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged,
+  signInWithPopup,
+  collection,
+  addDoc,
+  Timestamp,
+  arrayRemove,
+  arrayUnion,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+  updateDoc,
+  where,
 
-export {
-  getFirestore, addDoc, collection, getDocs, query, where,
 };

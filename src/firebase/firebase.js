@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { addDoc, collection } from 'firebase/firestore';
 // eslint-disable-next-line import/named
-import { db } from './firebaseConfig.js';
+import { db } from './firebaseFunctions.js';
 
 /**
  *
