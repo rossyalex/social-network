@@ -13,7 +13,7 @@ export const login = () => `<div class="card"><img id="logoRunners" src="../../i
             <div class="container-buttons">
                  <button type="button" class="button" id="login"><span>Ingresar</span></button>
             </div>
-            <button id="linkWithGoogle" type="button" class="button"><img src="../../img/google.png" alt="Logo Google" id="linkgoogleImg"/><span>Vincular Cuenta con Google</span></button>
+            <button id="linkWithGoogle" type="button" class="button"><img src="../../img/google.png" alt="Logo Google" id="linkgoogleImg"/><span>Iniciar sesión con Google</span></button>
             
         </form>
         </div>`;
