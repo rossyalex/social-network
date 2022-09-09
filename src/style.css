@@ -19,6 +19,7 @@ html {
     color: #0075FF;
     text-align: center;
     margin-top: 30px;
+    font-weight: bold;
 }
 
 body {
@@ -31,6 +32,7 @@ h1 {
     color: #0075FF;
     text-align: center;
     font-size: 40px;
+    text-shadow: 2.2px 2.2px #000000;
 }
 
 
@@ -82,8 +84,10 @@ input {
 
 .button {
     display: inline-flex;
-    align-items: center; /* Vertical */
-    justify-content: center; /* Horizontal */
+    align-items: center;
+    /* Vertical */
+    justify-content: center;
+    /* Horizontal */
     width: 100%;
     height: 35px;
     background: #141414;
@@ -104,6 +108,7 @@ input {
     z-index: 2;
     transition: .3s ease all;
 }
+
 .button::after {
     content: "";
     width: 1px;
@@ -120,7 +125,7 @@ input {
 
 .button:hover::after {
     transform: scale(400);
-    background:#0075FF;
+    background: #0075FF;
 }
 
 /*.button {
@@ -134,8 +139,8 @@ input {
     /*width: 100px;
 }*/
 
-.fa-eye{
-    margin-left: -30px; 
+.fa-eye {
+    margin-left: -30px;
     cursor: pointer;
 }
 
@@ -154,7 +159,7 @@ input {
     width: 15px;
     height: 15px;
     position: relative;
-    top: 2px; 
+    top: 2px;
     left: -0.8px;
 }
 
@@ -178,7 +183,7 @@ input {
     width: 100%;
     padding: 2px;
     border-radius: 4px;
-   /* margin-bottom: 16px;*/
+    /* margin-bottom: 16px;*/
     border: 1px solid #222;
     font-size: 18px;
 }
@@ -215,7 +220,7 @@ input {
     padding: 2px 16px;
     border-radius: 0.5rem;
     text-align: center;
-    margin:auto;
+    margin: auto;
     margin-top: 10%;
     margin-left: 6vw;
 }
@@ -224,7 +229,7 @@ input {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.runnergirl{
+.runnergirl {
     width: 100px;
     height: 100px;
     position: relative;
@@ -243,6 +248,7 @@ input {
     .col-1 {
         width: 4.33%;
     }
+
     .col-2 {
         width: 12.66%;
     }
@@ -286,6 +292,7 @@ input {
     .col-12 {
         width: 96%;
     }
+
     .navBar {
         display: flex;
         justify-content: flex-start;
@@ -312,7 +319,7 @@ input {
         padding: 2px 16px;
         border-radius: 0.5rem;
         text-align: center;
-        margin:auto;
+        margin: auto;
         margin-top: 10%;
         margin-left: 1vw;
     }
@@ -320,7 +327,7 @@ input {
     .girlwhiterun {
         width: 70%;
         margin-top: 55vw;
-        }
+    }
 }
 
 /*Vista escritorio*/
@@ -329,6 +336,7 @@ input {
     .col-1 {
         width: 4.33%;
     }
+
     .col-2 {
         width: 12.66%;
     }
