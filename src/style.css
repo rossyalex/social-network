@@ -35,6 +35,9 @@ h1 {
     text-shadow: 2.2px 2.2px #000000;
 }
 
+label {
+    font-size: 18px;
+}
 
 .navBar {
     display: flex;
@@ -80,6 +83,10 @@ h1 {
 
 input {
     margin-bottom: 8px;
+    border-radius: 6px;
+    background: #7dc0ff33;
+    padding: 6px;
+    /* color: ; */
 }
 
 .button {
@@ -145,7 +152,7 @@ input {
 }
 
 #logoRunners {
-    width: 150px;
+    width: 170px;
     height: 150px;
     margin-top: 20px;
 }
