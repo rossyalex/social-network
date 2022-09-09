@@ -3,6 +3,7 @@ import {
 } from '../firebase/auth.js';
 
 import { logInPath, register, userActive } from './auth.js';
+import { createClickPost, getAllPosts } from './homeDom.js';
 
 function singInPath() { window.location.href = '/login'; }
 function registerPath() { window.location.href = '/register'; }
@@ -110,6 +111,8 @@ export const logic = () => {
 
   if (home) {
     userActive();
+    createClickPost();
+    getAllPosts();
   }
 
   return myLogicApp;

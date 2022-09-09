@@ -236,6 +236,18 @@ input {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.cardPost {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #ffffff;
+    width: 300px;
+    margin: 1rem auto;
+    padding: 2px 16px;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-left: 6vw;
+}
+
 .runnergirl {
     width: 100px;
     height: 100px;
@@ -248,6 +260,81 @@ input {
 .girlwhiterun {
     width: 100%;
     margin-top: 30vw;
+}
+
+textarea {
+    resize: none;
+}
+
+.buttonPost {
+    border-radius: 2px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 4px;
+    width: 60px;
+    height: 25px;
+}
+
+.textComment {
+    margin-top: 5px;
+}
+
+.commentsPost {
+    margin-top: 5px;
+}
+
+.comment {
+    margin: 4px;
+}
+
+.buttonPostComment {
+    border-radius: 2px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 4px;
+    height: 25px;
+}
+
+.buttonDelete {
+    margin-left: 4px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.w3-badge {
+    border-radius: 50%
+}
+.w3-margin-left {
+    margin-left: 16px!important
 }
 
 /*Vista tablet*/
@@ -329,6 +416,17 @@ input {
         margin: auto;
         margin-top: 10%;
         margin-left: 1vw;
+    }
+
+    .cardPost {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+        background-color: #ffffff;
+        width: 300px;
+        padding: 2px 16px;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin: 10px auto 1rem 1vw;
     }
 
     .girlwhiterun {
@@ -414,3 +512,4 @@ input {
         margin-top: 0vw;
     }
 }
+
