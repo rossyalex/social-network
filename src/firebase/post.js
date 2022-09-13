@@ -29,6 +29,7 @@ export const addPosts = async (post) => {
   }
 };
 
+// función para traer todos los post
 export const allPosts = async () => {
     try {
       const posts = [];

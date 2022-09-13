@@ -1,5 +1,5 @@
 import { addPosts, allPosts } from '../firebase/post.js';
-
+// función para crear post
 export async function createPost() {
   const content = document.getElementById('content');
   const message = content.value;
@@ -27,11 +27,13 @@ export function handlePost() {
   });
 }
 
+// función que da evento a la creación de post
 export function createClickPost() {
     const buttonPost = document.getElementById('createPost');
     buttonPost.addEventListener('click', createPost);
   }
 
+  // función que muestra post en home, inyectando HTML
   export function renderPost(posts) {
     const renderId = document.getElementById('renderPosts');
     const userId = localStorage.getItem('uid');
