@@ -77,7 +77,7 @@ export function userActive() {
       console.log(uid);
     } else {
       console.log('No esta logueado');
-      window.location.href = '/login';
+      window.location.href = '/signin';
     }
   });
 }

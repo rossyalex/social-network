@@ -1,20 +1,19 @@
 import {
-    addDoc, collection, db, deleteDoc, doc, getDoc, getDocs, updateDoc,
-  } from './firebaseImports.js';
-  // Objeto post de ejemplo
-  // const post = {
-  //     content: 'Recomiendo correr en plaza Ñuñoa',
-  //     userId: '23redasd23e',
-  //     name: 'chopita',
-  //     likes: 0,
-  //     comments: [{comentario1}, {comentario2},... ],
-  //   };
-  
-  // POST - Agregar - Editar - Eliminar - Ver todos los posts - Comentar los posts - Likes
-  
-  // Functions - addPost - updatePost - deletePost - allPosts - addCommentPost
-  // updateCommentPost - deleteCommentPost - likePost
+  addDoc, collection, db, deleteDoc, doc, getDoc, getDocs, updateDoc,
+} from './firebaseImports.js';
+// Objeto post de ejemplo
+// const post = {
+//     content: 'Recomiendo correr en plaza Ñuñoa',
+//     userId: '23redasd23e',
+//     name: 'chopita',
+//     likes: 0,
+//     comments: [{comentario1}, {comentario2},... ],
+//   };
 
+// POST - Agregar - Editar - Eliminar - Ver todos los posts - Comentar los posts - Likes
+
+// Functions - addPost - updatePost - deletePost - allPosts - addCommentPost
+// updateCommentPost - deleteCommentPost - likePost
 
 /**
  * Función para agregar post
@@ -30,17 +29,19 @@ export const addPosts = async (post) => {
 };
 
 // función para traer todos los post
+// eslint-disable-next-line consistent-return
 export const allPosts = async () => {
-    try {
-      const posts = [];
-      const querySnapshot = await getDocs(collection(db, 'posts'));
-      querySnapshot.forEach((doc) => {
-        const post = doc.data();
-        post.id = doc.id;
-        posts.push(post);
-      });
-      return posts;
-    } catch (e) {
-      console.log('Error get all documents', e.message);
-    }
-  };
+  try {
+    const posts = [];
+    const querySnapshot = await getDocs(collection(db, 'posts'));
+    // eslint-disable-next-line no-shadow
+    querySnapshot.forEach((doc) => {
+      const post = doc.data();
+      post.id = doc.id;
+      posts.push(post);
+    });
+    return posts;
+  } catch (e) {
+    console.log('Error get all documents', e.message);
+  }
+};

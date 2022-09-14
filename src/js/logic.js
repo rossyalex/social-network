@@ -2,6 +2,7 @@ import {
   accessGoogle, logout,
 } from '../firebase/auth.js';
 
+// eslint-disable-next-line import/no-cycle
 import { logInPath, register, userActive } from './auth.js';
 import { createClickPost, getAllPosts } from './homeDom.js';
 
@@ -57,7 +58,6 @@ export const logic = () => {
   const buttonLogIn = document.getElementById('login');
   const home = document.getElementById('home');
   // console.log(buttonOutGoogle);
-  const myLogicApp = 'Ok';
   // Si existe un botón en el renderizado entonces agrega evento
   if (buttonRegisterUser) {
     toggleEyeRegister();
@@ -67,6 +67,7 @@ export const logic = () => {
       const pass = document.getElementById('password').value;
       const response = await register(email, pass);
       if (response) {
+        // eslint-disable-next-line no-shadow
         const { user: { accessToken, email } } = response;
         localStorage.setItem('token', accessToken);
         localStorage.setItem('email', email);
@@ -115,5 +116,5 @@ export const logic = () => {
     getAllPosts();
   }
 
-  return myLogicApp;
+  return true;
 };

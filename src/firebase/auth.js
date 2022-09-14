@@ -35,7 +35,7 @@ export const logout = async () => {
     await signOut(auth);
     localStorage.removeItem('token');
     localStorage.removeItem('email');
-    window.location.href = '/login';
+    window.location.href = '/signin';
   } catch (e) {
     // console.error(e);
   }
