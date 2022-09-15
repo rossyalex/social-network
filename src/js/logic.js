@@ -5,6 +5,8 @@ import {
 // eslint-disable-next-line import/no-cycle
 import { logInPath, register, userActive } from './auth.js';
 import { createClickPost, getAllPosts } from './homeDom.js';
+import { createClickPostTraining } from './trainingDom.js';
+import { createClickPostFeeding } from './feedingDom.js';
 
 function singInPath() { window.location.href = '/login'; }
 function registerPath() { window.location.href = '/register'; }
@@ -57,6 +59,8 @@ export const logic = () => {
   const registerView = document.getElementById('create');
   const buttonLogIn = document.getElementById('login');
   const home = document.getElementById('home');
+  const feeding = document.getElementById('feeding');
+  const training = document.getElementById('training');
   // console.log(buttonOutGoogle);
   // Si existe un botón en el renderizado entonces agrega evento
   if (buttonRegisterUser) {
@@ -113,6 +117,18 @@ export const logic = () => {
   if (home) {
     userActive();
     createClickPost();
+    getAllPosts();
+  }
+
+  if (feeding) {
+    userActive();
+    createClickPostFeeding();
+    getAllPosts();
+  }
+
+  if (training) {
+    userActive();
+    createClickPostTraining();
     getAllPosts();
   }
 
