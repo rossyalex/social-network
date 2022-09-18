@@ -72,7 +72,8 @@ export const logic = () => {
       const response = await register(email, pass);
       if (response) {
         // eslint-disable-next-line no-shadow
-        const { user: { accessToken, email } } = response;
+        const { user: { accessToken, uid } } = response;
+        localStorage.setItem('uid', uid);
         localStorage.setItem('token', accessToken);
         localStorage.setItem('email', email);
         window.location.href = '/';
@@ -102,9 +103,12 @@ export const logic = () => {
     buttonLogIn.addEventListener('click', async () => {
       const response = await logInPath(emailInput.value, passInput.value);
       if (response) {
-        const { user: { accessToken, email } } = response;
+        const { user: { accessToken, email, uid } } = response;
+        localStorage.setItem('uid', uid);
         localStorage.setItem('token', accessToken);
-        localStorage.setItem('email', email);
+        // Obtiene solo la primera parte del correo
+        const mailModified = email.split('@')[0];
+        localStorage.setItem('email', mailModified);
         window.location.href = '/';
       }
     });
@@ -117,6 +121,7 @@ export const logic = () => {
   if (home) {
     userActive();
     createClickPost();
+    // Renderizar todos los posts
     getAllPosts();
   }
 

@@ -12,15 +12,8 @@ export const accessGoogle = () => {
       const { user: { accessToken, email, uid } } = response;
       localStorage.setItem('uid', uid);
       localStorage.setItem('token', accessToken);
-      localStorage.setItem('email', email);
-      // console.log('Result signInPopup', result);
-      // // This gives you a Google Access Token. You can use it to access the Google API.
-      // const credential = GoogleAuthProvider.credentialFromResult(result);
-      // console.log('Credenciales', credential);
-      // // const token = credential.accessToken;
-      // // The signed-in user info.
-      // const user = result.user;
-      // console.log(user);
+      const mailModified = email.split('@')[0];
+      localStorage.setItem('email', mailModified);
       window.location.href = '/';
     })
     .catch((error) => {
@@ -35,6 +28,7 @@ export const logout = async () => {
     await signOut(auth);
     localStorage.removeItem('token');
     localStorage.removeItem('email');
+    localStorage.removeItem('uid');
     window.location.href = '/signin';
   } catch (e) {
     // console.error(e);
