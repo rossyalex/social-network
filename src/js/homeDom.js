@@ -23,7 +23,7 @@ export function renderPost(posts) {
                 <h4>Runner ${post.name}</h4>
                 <p>${post.content}</p>
                 <p class="datePost">Creado el ${post.date}</p>
-                <div class="hide editPost"><textarea class="textEditComment" data-id="${post.id}" cols="35" rows="10">${post.content}</textarea><button class="editPostButton">Editar Post</button></div>
+                <div class="hide editPost" data-id="${post.id}"><textarea class="textEditComment" data-id="${post.id}" cols="35" rows="10">${post.content}</textarea><button class="editPostButton">Editar Post</button></div>
                 <button class="buttonLike tooltip" data-id="${post.id}">
                     <i class="fa-solid fa-hand-holding-heart" data-id="${post.id}"></i>
                     ${post.likes.qty === undefined ? 0 : post.likes.qty}
@@ -125,10 +125,17 @@ export function createClickEditPost() {
   const editButtons = document.querySelectorAll('.buttonEdit');
   const editDivPost = document.querySelectorAll('.editPost');
   const editPostButtons = document.querySelectorAll('.editPostButton');
-  editButtons.forEach((button, i) => {
-    button.addEventListener('click', () => {
-      editDivPost[i].classList.toggle('hide');
-      editPostButtons[i].addEventListener('click', editPostEvent);
+  editButtons.forEach((button) => {
+    const dataId = button.getAttribute('data-id');
+    editDivPost.forEach((eleHtml, i) => {
+      const eleDataId = eleHtml.getAttribute('data-id');
+      if (dataId === eleDataId) {
+        console.log('Pasa aca', eleDataId);
+        button.addEventListener('click', () => {
+          eleHtml.classList.toggle('hide');
+          editPostButtons[i].addEventListener('click', editPostEvent);
+        });
+      }
     });
   });
 }
