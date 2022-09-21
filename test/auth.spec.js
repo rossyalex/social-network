@@ -9,10 +9,10 @@ import {
   db,
   query,
   signInWithEmailAndPassword,
-  auth, createUserWithEmailAndPassword,
+  auth, createUserWithEmailAndPassword, onAuthStateChanged,
 }
   from '../src/firebase/firebaseImports.js';
-import { logInPath, register } from '../src/js/auth.js';
+import { logInPath, register, userActive } from '../src/js/auth.js';
 
 jest.mock('../src/firebase/firebaseImports.js', () => ({
   auth: jest.fn(),
@@ -29,6 +29,7 @@ jest.mock('../src/firebase/firebaseImports.js', () => ({
   db: jest.fn(),
   query: jest.fn(),
   where: jest.fn(),
+  onAuthStateChanged: jest.fn(),
 }));
 
 describe('Testing function firebase', () => {
@@ -58,3 +59,15 @@ describe('Test user Login', () => {
     expect(signInWithEmailAndPassword).toHaveBeenCalledWith(auth, email, password);
   });
 });
+
+// describe('Testing Active user', () => {
+//   const user = 'pepito@gmail.com';
+//   it('debería llamar al usuario activo', () => {
+//     userActive(user);
+//     expect(onAuthStateChanged).toHaveBeenCalled(user);
+//   });
+//   it('debería llamar al usuario activo with arguments', () => {
+//     userActive(user);
+//     expect(onAuthStateChanged).toHaveBeenCalledWith(auth, user);
+//   });
+// });
