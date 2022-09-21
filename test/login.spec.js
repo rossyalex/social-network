@@ -4,7 +4,7 @@ describe('Testing html in form login', () => {
     const email = document.getElementById('emailLogIn');
     expect(email.value).toBe('');
   });
-  it('Email not have value', () => {
+  it('Email dont have value', () => {
     document.body.innerHTML = '<input id="emailLogIn" type="text" value="" />';
     const email = document.getElementById('emailLogIn');
     expect(email.value).not.toBe('faker@gmail.com');
