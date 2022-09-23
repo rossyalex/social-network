@@ -39,5 +39,7 @@ de información relacionada.
 
 ## 6. Testeos de usabilidad
 
-
+Realizamos testeos de usabilidad a distintas posibles usuaria de la aplicación, recibiendo 
+diferentes feedbacks que nos permitieron mejorar las funciones de nuestra aplicación, además 
+de mejoras visuales en cuanto al diseño. Logrando así el producto final responsive en óptimas condiciones, cumpliendo con todos nuestros objetivos propuestos.
 
