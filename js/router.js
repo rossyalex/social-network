@@ -24,7 +24,7 @@ export const routeString = (href) => {
 export const handleLocation = () => {
   const root = document.getElementById('root');
   const url = window.location.pathname;
-  const path = url.substring(15);
+  const path = url.includes('/social-network/') ? url.substring(15) : url;
   renderNav(path);
   root.innerHTML = routes[path] || routes.error404;
   logic();
