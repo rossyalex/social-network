@@ -130,7 +130,6 @@ export function createClickEditPost() {
     editDivPost.forEach((eleHtml, i) => {
       const eleDataId = eleHtml.getAttribute('data-id');
       if (dataId === eleDataId) {
-        console.log('Pasa aca', eleDataId);
         button.addEventListener('click', () => {
           eleHtml.classList.toggle('hide');
           editPostButtons[i].addEventListener('click', editPostEvent);
@@ -227,7 +226,6 @@ export function createClickDeleteComment() {
  */
 export function createClickEditComment() {
   const editButtons = document.querySelectorAll('.editComment');
-  console.log(editButtons);
   const divEditComments = document.querySelectorAll('.divEditComment');
   const editIcons = document.querySelectorAll('.edit');
   editButtons.forEach((button, i) => {
