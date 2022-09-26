@@ -119,20 +119,20 @@ export const logic = () => {
   }
 
   if (home) {
-    userActive();
+    // userActive();
     createClickPost();
     // Renderizar todos los posts
     getAllPosts();
   }
 
   if (feeding) {
-    userActive();
+    // userActive();
     createClickPostFeeding();
     getAllPosts();
   }
 
   if (training) {
-    userActive();
+    // userActive();
     createClickPostTraining();
     getAllPosts();
   }

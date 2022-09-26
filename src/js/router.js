@@ -18,7 +18,7 @@ export const route = (event) => {
 export const handleLocation = () => {
   const root = document.getElementById('root');
   const path = window.location.pathname;
-  // renderNav(path);
+  renderNav(path);
   root.innerHTML = routes[path] || routes.error404;
   logic();
 };
