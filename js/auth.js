@@ -79,7 +79,7 @@ export function userActive() {
       console.log(uid);
     } else {
       console.log('No esta logueado');
-      routeString('/signin');
+      routeString('/social-network/signin');
     }
   });
 }

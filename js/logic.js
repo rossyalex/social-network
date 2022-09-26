@@ -10,8 +10,8 @@ import { createClickPostFeeding } from './feedingDom.js';
 // eslint-disable-next-line import/named,import/no-cycle
 import { routeString } from './router.js';
 
-function singInPath() { routeString('/login'); }
-function registerPath() { routeString('/register'); }
+function singInPath() { routeString('/social-network/login'); }
+function registerPath() { routeString('/social-network/register'); }
 
 /**
  * Funcion para manejar errores con class hide
@@ -78,7 +78,7 @@ export const logic = () => {
         localStorage.setItem('uid', uid);
         localStorage.setItem('token', accessToken);
         localStorage.setItem('email', email);
-        routeString('/');
+        routeString('/social-network/');
       }
     });
   }
@@ -111,7 +111,7 @@ export const logic = () => {
         // Obtiene solo la primera parte del correo
         const mailModified = email.split('@')[0];
         localStorage.setItem('email', mailModified);
-        routeString('/');
+        routeString('/social-network/');
       }
     });
     const togglePassword = document.getElementById('togglePassword');

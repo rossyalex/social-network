@@ -15,7 +15,7 @@ export const accessGoogle = () => {
       localStorage.setItem('token', accessToken);
       const mailModified = email.split('@')[0];
       localStorage.setItem('email', mailModified);
-      routeString('/');
+      routeString('/social-network/');
     })
     .catch((error) => {
       console.log(error);
@@ -30,7 +30,7 @@ export const logout = async () => {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
     localStorage.removeItem('uid');
-    routeString('/signin');
+    routeString('/social-network/signin');
   } catch (e) {
     // console.error(e);
   }

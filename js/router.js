@@ -3,6 +3,8 @@ import { nav } from '../components/bases/nav.js';
 // eslint-disable-next-line import/no-cycle
 import { logic } from './logic.js';
 
+export const urlGit = '/social-network/';
+
 export const route = (event) => {
   // eslint-disable-next-line no-param-reassign
   event = event || window.event;
