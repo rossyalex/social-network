@@ -119,7 +119,7 @@ export const logic = () => {
   }
 
   if (home) {
-    // userActive();
+    userActive();
     createClickPost();
     // Renderizar todos los posts
     getAllPosts();
