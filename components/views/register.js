@@ -1,6 +1,6 @@
 /* eslint-disable eol-last */
 
-export const register = () => `<div class="card"><img class="runnergirl" src="/img/logogif3.gif" alt="Logo Runner en movimiento">
+export const register = () => `<div class="card"><img class="runnergirl" src="/social-network/img/logogif3.gif" alt="Logo Runner en movimiento">
     <h1>Crear Usuario</h1>
     <form class="buttonsWrapper" action="" method="post">
           <label for="email">Correo electrónico</label>
@@ -14,7 +14,7 @@ export const register = () => `<div class="card"><img class="runnergirl" src="/i
         <div class="container-buttons">
          <button type="button" class="button" id="registerUser"><span>Registrate</span></button>
         </div>
-        <button id="linkWithGoogle" type="button" class="button"><span><img src="../../img/google.png" alt="Logo Google" id="linkgoogleImg"/></span><span>Vincular Cuenta con Google</span></button>
+        <button id="linkWithGoogle" type="button" class="button"><span><img src="/social-network/img/google.png" alt="Logo Google" id="linkgoogleImg"/></span><span>Vincular Cuenta con Google</span></button>
     <!-- <button id="outGoogle" type="button">Logout</button> -->
     </form>
     </div>`;
