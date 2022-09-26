@@ -6,7 +6,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from '../firebase/firebaseImports.js';
-import { handleLocation } from './router.js';
+// eslint-disable-next-line import/no-cycle
+import { routeString } from './router.js';
 
 /**
  * Función para login con email y password
@@ -78,9 +79,7 @@ export function userActive() {
       console.log(uid);
     } else {
       console.log('No esta logueado');
-      const href = '/signin';
-      window.history.pushState({}, '', href);
-      handleLocation();
+      routeString('/signin');
     }
   });
 }

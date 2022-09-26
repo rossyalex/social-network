@@ -1,6 +1,7 @@
 import {
   getAuth, signInWithPopup, GoogleAuthProvider, signOut, app,
 } from './firebaseImports.js';
+import { routeString } from '../js/router.js';
 
 const provider = new GoogleAuthProvider();
 
@@ -14,7 +15,7 @@ export const accessGoogle = () => {
       localStorage.setItem('token', accessToken);
       const mailModified = email.split('@')[0];
       localStorage.setItem('email', mailModified);
-      window.location.href = '/';
+      routeString('/');
     })
     .catch((error) => {
       console.log(error);
@@ -29,7 +30,7 @@ export const logout = async () => {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
     localStorage.removeItem('uid');
-    window.location.href = '/signin';
+    routeString('/signin');
   } catch (e) {
     // console.error(e);
   }

@@ -1,5 +1,6 @@
 import { routes } from './routes/index.js';
 import { nav } from '../components/bases/nav.js';
+// eslint-disable-next-line import/no-cycle
 import { logic } from './logic.js';
 
 export const route = (event) => {
@@ -11,6 +12,11 @@ export const route = (event) => {
   if (!href) {
     href = event.target.parentElement.href;
   }
+  window.history.pushState({}, '', href);
+  handleLocation();
+};
+
+export const routeString = (href) => {
   window.history.pushState({}, '', href);
   handleLocation();
 };

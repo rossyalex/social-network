@@ -7,9 +7,11 @@ import { logInPath, register, userActive } from './auth.js';
 import { createClickPost, getAllPosts } from './homeDom.js';
 import { createClickPostTraining } from './trainingDom.js';
 import { createClickPostFeeding } from './feedingDom.js';
+// eslint-disable-next-line import/named,import/no-cycle
+import { routeString } from './router.js';
 
-function singInPath() { window.location.href = '/login'; }
-function registerPath() { window.location.href = '/register'; }
+function singInPath() { routeString('/login'); }
+function registerPath() { routeString('/register'); }
 
 /**
  * Funcion para manejar errores con class hide
@@ -76,7 +78,7 @@ export const logic = () => {
         localStorage.setItem('uid', uid);
         localStorage.setItem('token', accessToken);
         localStorage.setItem('email', email);
-        window.location.href = '/';
+        routeString('/');
       }
     });
   }
@@ -109,7 +111,7 @@ export const logic = () => {
         // Obtiene solo la primera parte del correo
         const mailModified = email.split('@')[0];
         localStorage.setItem('email', mailModified);
-        window.location.href = '/';
+        routeString('/');
       }
     });
     const togglePassword = document.getElementById('togglePassword');
